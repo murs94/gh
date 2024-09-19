@@ -8,10 +8,6 @@ class Reservation extends Component
 {
     public function render()
     {
-        return <<<'HTML'
-        <div>
-            {{-- If your happiness depends on money, you will never be happy with yourself. --}}
-        </div>
-        HTML;
+        return view('livewire.reservations.index');
     }
 }

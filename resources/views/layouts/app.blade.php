@@ -36,7 +36,7 @@
                                 <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/') }}">{{ __('Reservation') }}</a>
+                                <a class="nav-link" href="{{ url('reservation') }}">{{ __('Reservation') }}</a>
                             </li>
                         </ul>
                     @endauth

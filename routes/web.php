@@ -15,5 +15,5 @@ Route::middleware(['auth'])->group(function (){
 
 //prefix -- to be use
 Route::prefix('reservation')->middleware(['auth'])->group(function () {
-    Route::get('/', App\Livewire\Dashboard::class)->name(name: 'dashboard');
+    Route::get('/', App\Livewire\Reservation::class);
 });
