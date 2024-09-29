@@ -5,7 +5,7 @@
                 <div class="card-header">{{ __('Reservation') }}</div>
 
                 <div class="card-body">
-                    {{ __('Reservation!') }}
+                    <livewire:users-table />
                 </div>
             </div>
         </div>

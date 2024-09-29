@@ -31,14 +31,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     @auth
-                        <ul class="navbar-nav me-auto">
+                        <!-- <ul class="navbar-nav me-auto">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('reservation') }}">{{ __('Reservation') }}</a>
                             </li>
-                        </ul>
+                        </ul> -->
+                        <ul class="navbar-nav me-auto">
+                        @foreach (config('navigation.menu') as $menuItem)
+                            <li class="nav-item">
+                                <!-- <a class="nav-link {{ Request::fullUrl() == url($menuItem['url']) ? 'active' : '' }}" href="{{ url($menuItem['url']) }}">{{ __($menuItem['name']) }}</a> -->
+                                <a class="nav-link {{ request()->routeIs($menuItem['route']) || request()->routeIs(substr($menuItem['route'], 0, strpos($menuItem['route'], '.')) . '.*') ? 'active' : '' }}" href="{{ route($menuItem['route']) }}">
+                                    {{ __($menuItem['name']) }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
                     @endauth
 
                     <!-- Right Side Of Navbar -->
